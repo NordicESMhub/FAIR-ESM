@@ -5,5 +5,10 @@ format: jb-article
 root: about
 sections:
 - file: intro
+- file: needs
+- file: wms
+- file: workflows
   sections:
-  - file: workflows
+  - file: workflow_details
+  - file: sub-workflow_details
+- file: roadmap
