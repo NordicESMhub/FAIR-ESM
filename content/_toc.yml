@@ -1,14 +1,18 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-article
+format: jb-book
 root: about
-sections:
-- file: intro
-- file: needs
-- file: wms
-- file: workflows
-  sections:
+parts:
+- caption: Introduction
+  chapters:
+  - file: needs
+  - file: wms
+- caption: FAIR ESM Workflows
+  chapters:
+  - file: workflows
   - file: workflow_details
   - file: sub-workflow_details
+- caption: Roadmap for FAIR ESMs
+  chapters:
 - file: roadmap
