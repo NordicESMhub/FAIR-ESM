@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Description of the 7 core workflows &#8212; FAIR Earth System Models</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">FAIR Earth System Models</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Welcome to the FAIR Earth System Model Hub
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   FAIR ESM workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="workflows.html">
+     Workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/workflow_details.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM/issues/new?title=Issue%20on%20page%20%2Fworkflow_details.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w1-running-an-earth-system-model-to-simulate-specific-events-scenarios-or-for-systematic-sensitivity-studies">
+   W1 - Running an Earth System Model to simulate specific events/scenarios or for systematic sensitivity studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w2-analyzing-and-comparing-existing-simulation-outputs-cmip-sensitivity-studies-scenarios-events-etc">
+   W2 - Analyzing and comparing existing simulation outputs (CMIP, sensitivity studies, scenarios/events, etc.)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w3-analyzing-and-comparing-model-outputs-against-observations-co-design">
+   W3 - Analyzing and comparing model outputs against observations (co-design)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w4-esm-outputs-used-as-input-for-different-models-or-studies-downscaling-transport-modelling-tracking-impacts">
+   W4 - ESM outputs used as input for different models or studies (downscaling, transport modelling/tracking, impacts)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w5-developing-an-earth-system-model-with-source-modifications-new-parameterizations">
+   W5 - Developing an Earth System Model with source modifications, new parameterizations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w6-running-an-earth-system-model-in-a-model-intercomparison-framework-well-defined-protocol">
+   W6 - Running an Earth system model in a model intercomparison framework (well defined protocol)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w7-developing-diagnostics-and-performance-metrics-tools-for-routine-evaluation-of-earth-system-models-in-cmip">
+   W7 - Developing diagnostics and performance metrics tools for routine evaluation of Earth system models in CMIP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Description
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="description-of-the-7-core-workflows">
+<h1>Description of the 7 core workflows<a class="headerlink" href="#description-of-the-7-core-workflows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="w1-running-an-earth-system-model-to-simulate-specific-events-scenarios-or-for-systematic-sensitivity-studies">
+<h2>W1 - Running an Earth System Model to simulate specific events/scenarios or for systematic sensitivity studies<a class="headerlink" href="#w1-running-an-earth-system-model-to-simulate-specific-events-scenarios-or-for-systematic-sensitivity-studies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>End users will exploit one Earth System Model using the same source code but changing different parameters. The ESM is often run in ensemble mode. A control (possibly also run in ensemble mode) is required to later compare the results and calculate anomalies.
+This workflow is typically used for changing CO2 (abrupt x4, for example) or more generally forcings (or characteristics of emissions) or other model inputs, simulating eruptions (injection of various types of volcanic aerosols, with different concentrations, durations, heights, etc.), experimenting with geoengineering, or for systematic sensitivity studies where a single parameter is changed (many different values).</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> - <em>Sub-Workflow 1</em> -
+<strong>Prepare and Run a control experiment</strong>:</p>
+<ul>
+<li><p>Base code is used from fully validated ESM (configuration is scientifically and technically validated on the target platform).</p></li>
+<li><p>Usually performed many times by different researchers from different groups because it is hard to find published control experiments.</p></li>
+<li><p>Whenever published, data may miss important information about the setup (including processor layout, target platform, options, etc.) and published control experiments may not be re-usable.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 2</em> - <strong>Quickly analyze the ESM control experiment (to make sure everything ran correctly)</strong>:</p>
+<ul>
+<li><p>Usually done at the very end e.g. after spending a lot of CPU hours.</p></li>
+<li><p>Researchers only focus on components and variables they are familiar with, and may miss important problems (i.e., looking at outputs from the atmospheric component when a “problem” originates from the ocean, etc.).</p></li>
+<li><p>Sometimes this step is skipped because researchers blindy trust the ESM, whereas obviously the core developers have not tested everything.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 3</em> - <strong>Prepare inputs for running a customized experiment</strong>:</p>
+<ul>
+<li><p>Researchers develop their own codes for customizing their experiments but never share their programs (and not even the resulting data/forcing, etc.).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 1</em> - <strong>Prepare and Run a “customized” experiment</strong></p></li>
+<li><p><strong>Step-5</strong> -  <em>Sub-Workflow 2</em> - <strong>Quickly check customized experiments</strong>:</p>
+<ul>
+<li><p>Researchers usually check after the end of the simulation and not as soon as data is available.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-6</strong> -  <em>Sub-Workflow 4</em> - <strong>Compare two experiments from the same ESM and same configuration (components, resolution, machine, etc.)</strong>:</p>
+<ul>
+<li><p>Usually each researcher develops his own programs from scratch. Very little is shared (many researchers consider that this step is part of the “learning” process and others have to go through it also).</p></li>
+<li><p>Programs developed/used are often not shared and not re-used/reproducible.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-7</strong> -  <em>Sub-Workflow 5</em> - <strong>Publish Control experiment e.g. archive it in a public repository</strong>:</p>
+<ul>
+<li><p>No standard procedure e.g. ad-hoc metadata (if any; except those required to publish the related paper in a journal).</p></li>
+<li><p>The goal is not to be re-used but to make data public as required by publishers.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-8</strong> -  <em>Sub-Workflow 5</em> - <strong>Publish/archive a “customized” experiment</strong>:</p>
+<ul>
+<li><p>Usually performed together with step 7.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w2-analyzing-and-comparing-existing-simulation-outputs-cmip-sensitivity-studies-scenarios-events-etc">
+<h2>W2 - Analyzing and comparing existing simulation outputs (CMIP, sensitivity studies, scenarios/events, etc.)<a class="headerlink" href="#w2-analyzing-and-comparing-existing-simulation-outputs-cmip-sensitivity-studies-scenarios-events-etc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This workflow is used after W1 or W6. It requires all model outputs to be on the same grid and temporal resolutions. It may also involve a post-processing stage to “CMORize” the data in conformance with particular conventions or standards.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 6</em> - <strong>CMORization or similar</strong>:</p>
+<ul>
+<li><p>This step is not always necessary when comparing with the same ESM or if the two ESMs have computed the same “variables” (or have a subset of common variables that will be used for the analysis).</p></li>
+<li><p>This may be an “ad-hoc” CMORization if the variables of interest are not those used in CMIPs.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 7</em> - <strong>Regridding (horizontal and/or vertical)</strong>:</p>
+<ul>
+<li><p>This step may not be necessary if the comparison is done between the same ESM (different experiment) or if the two models have “similar” grids.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 4</em> - <strong>Compare model experiments (after regridding, vertical interpolation &amp; CMORization or similar)</strong>.</p></li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 8</em> - <strong>Publish results from ESM analysis.</strong></p>
+<ul>
+<li><p>Very similar to SW5 but here we do not publish ESM model outputs but post-processed ESMs (means, anomalies, etc.) and plots/figures (with only the data used for plotting).</p></li>
+<li><p>Usually very ad-hoc workflow.</p></li>
+<li><p>Can be published as part of additional data in the paper publication process; rarely published to be re-used/reproduced.</p></li>
+<li><p>Code used for generating plots/analysis data is not always published “properly” e.g. following FAIR principles (FAIR data and FAIR software).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w3-analyzing-and-comparing-model-outputs-against-observations-co-design">
+<h2>W3 - Analyzing and comparing model outputs against observations (co-design)<a class="headerlink" href="#w3-analyzing-and-comparing-model-outputs-against-observations-co-design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>This workflow is used for instance before W5 or as a standalone study. In addition to selecting an area of interest and sometimes interpolating model outputs to observation locations, end users often need to derive new parameters either from the model outputs or from observations so that they can be compared. This workflow can be executed either by modellers or by “observers”.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 9</em> - <strong>Select area or location of interest from existing ESM model outputs</strong></p>
+<ul>
+<li><p>from a previous simulation, CMIP, etc. with possibly time-interpolation/rescaling (mean, etc.).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 10</em> - <strong>Extract/fetch observations to prepare them for comparisons. This step may include some bias corrections.</strong></p></li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 11</em> - <strong>Compare model results with observations:</strong></p>
+<ul>
+<li><p>Usually very ad-hoc plots when done within a research context.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 8</em> - <strong>Publish ESM vs observation analysis/visualization</strong></p>
+<ul>
+<li><p>Only when mandatory (as part of a publication) and not following any FAIR principles (but mostly following publisher’s guidelines if any).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w4-esm-outputs-used-as-input-for-different-models-or-studies-downscaling-transport-modelling-tracking-impacts">
+<h2>W4 - ESM outputs used as input for different models or studies (downscaling, transport modelling/tracking, impacts)<a class="headerlink" href="#w4-esm-outputs-used-as-input-for-different-models-or-studies-downscaling-transport-modelling-tracking-impacts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Description<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>This workflow requires re-formatting/regridding model outputs to specific format/grid and/or time range. It is specific to the ESM and model used for the study. Therefore, it is possible to provide a general framework but the actual workflow would need to be adapted for each use case.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 7</em> - <strong>Regridding (time &amp; space):</strong></p>
+<ul>
+<li><p>May not be a separate step and performed together with Step-2.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 12</em> - <strong>Reformat data to prepare it for the model to be used</strong></p>
+<ul>
+<li><p>Sometimes the program to regrid and reformat data is provided by the model to be used (for instance WRF has a Preprocessing System called WPS)</p></li>
+<li><p>If not provided, researchers develop ad-hoc programs that are usually not shared and not meant to be reused.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 13</em> - <strong>Run a new model (regional/transport, etc.)</strong></p>
+<ul>
+<li><p>Steps required for running this model are usually very similar to an ESM (prepare, run, post-process/visualize, publish data).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 16</em> - <strong>Publish model results:</strong></p>
+<ul>
+<li><p>Usually very little information regarding the provenance of the input data is provided, only the file name (and there is no way to find out if a particular file has been modified).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w5-developing-an-earth-system-model-with-source-modifications-new-parameterizations">
+<h2>W5 - Developing an Earth System Model with source modifications, new parameterizations<a class="headerlink" href="#w5-developing-an-earth-system-model-with-source-modifications-new-parameterizations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Description<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>This workflow is used to test source code changes (such as new parameterizations, introduction of new physical processes, bug fixes, etc.). Ideally, the source code changes are first tested locally by the end users, then the modified code undergoes automated testing when pushed to github/gitlab (or similar). Finally the scientific validity has to be verified, and there will often be several iterations until the approved changes become an integral part of a new release.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 14</em> - <strong>Make a source code change to an ESM, compile and test it</strong></p>
+<ul>
+<li><p>very short run, sometimes only a few time steps or days.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 1</em> - <strong>Make a “control” experiment.</strong></p></li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 1</em> - <strong>Make a “customized” experiment</strong></p>
+<ul>
+<li><p>to test the code changes from a scientific point of view (duration may vary depending on the code changes).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 2</em> - <strong>Quickly check control experiment.</strong></p></li>
+<li><p><strong>Step-5</strong> -  <em>Sub-Workflow 2</em> - <strong>Quickly check customized experiments.</strong></p></li>
+<li><p><strong>Step-6</strong> -  <em>Sub-Workflow 11</em> - <strong>Compare the model with observations (for instance when running a single column model).</strong></p>
+<ul>
+<li><p>This step may be skipped by researchers who only perform model development from a “theoretical” point of view (and only evaluate how the models “behaves” against the theory, without necessarily any reference measurements).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-7</strong> -  <em>Sub-Workflow 17</em> - <strong>Feedback results to “observers”</strong></p>
+<ul>
+<li><p>or field experimentalists for instance to define new/different measurement campaigns (i.e., to better specify which quantities should be measured and how).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-8</strong> -  <em>Sub-Workflow 4</em> - <strong>Compare two experiments (control &amp; customized with code changes).</strong></p></li>
+<li><p><strong>Step-9</strong> -  <em>Sub-Workflow 14</em> - <strong>May start again from step-1 to improve the code changes using feedback from modellers and observers.</strong></p></li>
+<li><p><strong>Step-10</strong> -  <em>Sub-Workflow 15</em> - <strong>Publish ESM code changes:</strong></p>
+<ul>
+<li><p>May be a very long process so the researcher may simply make a copy of the original code and add his/her changes in a separate repository.</p></li>
+<li><p>The changes may never be added to the main code (depending on the type of change, on the ESM, and on the core developers’ policy in this matter).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-11</strong> -  <em>Sub-Workflow 5</em> - <strong>Publish Control experiment e.g. archive it in a public repository.</strong></p></li>
+<li><p><strong>Step-12</strong> -  <em>Sub-Workflow 6</em> - <strong>Publish customized experiment (with code changes) e.g. archive it in a public repository:</strong></p>
+<ul>
+<li><p>Usually no link with code changes.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-13</strong> -  <em>Sub-Workflow 8</em> - <strong>Publish ESM vs. observation analysis/visualization</strong></p>
+<ul>
+<li><p>Only if required by the publisher.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w6-running-an-earth-system-model-in-a-model-intercomparison-framework-well-defined-protocol">
+<h2>W6 - Running an Earth system model in a model intercomparison framework (well defined protocol)<a class="headerlink" href="#w6-running-an-earth-system-model-in-a-model-intercomparison-framework-well-defined-protocol" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Description<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>This workflow is usually developed by a modeller who has a very good overview of the protocol to be followed (for instance within CMIP6). The role of the person running the workflow is to monitor and make sure everything is running seamlessly (i.e., that the model does not crash and, should that happen, fix the problem then resubmit, that none of the files produced are “lost” during the transfer or archiving processes, etc.). Most of the time, simulations are performed in ensemble mode and a post-processing (such as CMORization) is included to prepare model outputs for ESGF publication. ESGF publication is also included after all the quality checks have passed.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 3</em> - <strong>Prepare inputs for running a CMIP-like experiment:</strong></p>
+<ul>
+<li><p>Follows a very well defined protocol or some inputs may already exist (scripts/codes used to generate the input files for the purpose of the experiment are not usually publicly available and the whole process is not always transparent).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 1</em> - <strong>Prepare and run the experiments.</strong></p></li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 2</em> - <strong>Quickly check experiment</strong></p>
+<ul>
+<li><p>Usually done after running quite a lot while it could be done more regularly to spot any problems early.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 18</em> - <strong>Scientific validation of the experiment.</strong></p>
+<ul>
+<li><p>Usually not an in-depth analysis of the data before publication (this is why data may be retracted afterwards and updated).</p></li>
+</ul>
+</li>
+<li><p><strong>Step-5</strong> -  <em>Sub-Workflow 6</em> - <strong>CMORization</strong></p>
+<ul>
+<li><p>Very often the CMORization is not done by the person who ran the simulation, it requires a lot of manual interventions which are potentially a source of errors. Some modelling groups accumulate all the simulations outputs for a “CMORization person” to transfer and convert after the end of the runs.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-6</strong> -  <em>Sub-Workflow 19</em> - <strong>Publication to ESGF</strong></p>
+<ul>
+<li><p>Follows a strict protocol; the person who is in charge of publishing data to ESGF is usually not the one who ran the simulations.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="w7-developing-diagnostics-and-performance-metrics-tools-for-routine-evaluation-of-earth-system-models-in-cmip">
+<h2>W7 - Developing diagnostics and performance metrics tools for routine evaluation of Earth system models in CMIP<a class="headerlink" href="#w7-developing-diagnostics-and-performance-metrics-tools-for-routine-evaluation-of-earth-system-models-in-cmip" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id6">
+<h2>Description<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>In this workflow, the end-user will modify and/or further develop existing diagnostic tools (using for instance ESMValTool or other ESM diagnostic packages). ESM outputs are already CMORized.</p>
+<ul class="simple">
+<li><p><strong>Step-1</strong> -  <em>Sub-Workflow 20</em> - <strong>Collect needs from scientists:</strong></p>
+<ul>
+<li><p>For large projects such as CMIPs, diagnostic tools are usually developed by dedicated staff.</p></li>
+<li><p>Often use a framework that they already know without trying to find out if the diagnostic has already been developed by others or if new “tools” exist, or how it will be maintained.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-2</strong> -  <em>Sub-Workflow 21</em> - <strong>Code changes/new diagnostic and test it</strong></p>
+<ul>
+<li><p>not necessarily from a scientific point of view but to make sure that at least it does not fail.</p></li>
+<li><p>For development, it may be run/developed with a sample dataset rather than CMIP/large dataset.</p></li>
+<li><p>Version control should be used to keep track of code changes (not always the case e.g. researcher may only push/deposit changes at the very end of the process).</p></li>
+<li><p>Automatic testing could be put in place to facilitate code development.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-3</strong> -  <em>Sub-Workflow 22</em> - <strong>Scientific validation of the newly developed diagnostic</strong></p>
+<ul>
+<li><p>May require copying large datasets to the post-processing platform, especially if the diagnostic tool cannot open/manipulate remote files.</p></li>
+<li><p>May be done by another person.</p></li>
+</ul>
+</li>
+<li><p><strong>Step-4</strong> -  <em>Sub-Workflow 23</em> - <strong>Publish/release new diagnostics:</strong></p>
+<ul>
+<li><p>May not be part of a specific publication (software publication is not very much used yet in the climate community).</p></li>
+<li><p>May not be reported/merged to a larger/main base code (for instance ESMValTool).</p></li>
+<li><p>May not follow best software practices (both for development and deployment).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Anne Fouilloux<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
