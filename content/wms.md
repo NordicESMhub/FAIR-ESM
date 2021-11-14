@@ -54,6 +54,138 @@ In relation to NICEST2 work package 3 “FAIR climate data for NorESM and EC-Ear
 - FAIR data and
 - FAIR software.
 
+## Details on the different Workflow Management Systems
+
+### CWL
+CWL stands for Common Workflow Language and is an open standard following the [Open-Stand.org principles for collaborative open standards development](https://open-stand.org/about-us/principles/). CWL is developed by a multi-vendor working group consisting of organizations and individuals aiming to enable scientists to share data analysis workflows. Anyone can contribute.
+
+More information is available at https://www.commonwl.org/.
+
+#### Is it currently widely used by the Climate community?
+CWL has been used within the DARE H2020 project for a IS-ENES Use Case (http://project-dare.eu/is-enes/) to develop and deploy a climate service/tool to follow storm tracks (integrated to IS-ENES [climate4impact portal](https://climate4impact.eu/)). We have not found any direct usage of CWL for running ESMs.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+The CWL workflow for tracking storms (DARE H2020 project) is publicly available in gitlab (https://gitlab.com/project-dare/wp7_cyclone-tracking/-/tree/cwl). We have not found any CWL workflows for running ESMs.
+
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+CWL is an implementation of the Common Workflow Language Standard.
+
+#### Is there a graphical user interface to compose workflows?
+There is no graphical user interface to compose workflows. Users are expected to have sufficient python programming expertise for composing CWL workflows from the command line.
+
+#### Does it support running tasks with containers?
+Yes. Within the DARE H2020 project, the [cyclone tracking](https://gitlab.com/project-dare/wp7_cyclone-tracking/-/tree/cwl) has been using [container technology](https://gitlab.com/project-dare/dare-platform/-/tree/master/containers/exec-context-cyclone/cwl) to be easily integrated with the C4I platform.
+
+### Cylc
+Cylc is the most known Workflow management System within the Climate Community. It has been initially developed by the Numerical Weather Prediction 
+Community to fulfill their needs when running operational forecasts. 
+
+More information about Cylc can be found at https://cylc.github.io/documentation/.
+
+#### Is it currently widely used by the Climate community?
+ It is not widely used but it is so far the most used.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+Cylc has been used for running CESM workflows for CMIP6 (see [CESM workflow for CMIP6 documentation](https://cesm-wf-documentation.readthedocs.io/en/latest/)). A github repository https://github.com/NCAR/CESM-WF allows to create a Cylc suite from the CESM XML environment to automate CESM run. The scripts are very specific to CESM (would need to be adapted for both NorESM and EC-Earth) and are still not platform independent (many hard-coded parameters for running on NCAR’s platforms).
+
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+No. The concept of Cylc is prior to CWL standard and there is no attempt yet to be CWL compliant. The main goal of Cylc is to serve the NWP community and to some extent the climate community.
+
+#### Is there a graphical user interface to compose workflows?
+There is no graphical interface to compose workflows but there is a graphical interface to monitor running tasks and to visualize the workflow (once created from the command line).
+
+#### Does it support running tasks with containers?
+There is no explicit mention of containers in the documentation but Cylc is versatile enough to be able to accommodate containers for running tasks.
+ 
+
+### EcFlow
+
+ecFlow is a client/server workflow package that enables users to run a large number of programs (with dependencies on each other and on time) in a controlled environment. It is used at ECMWF to run all the operational suites across a range of platforms. Some meteorological services use ecFlow or similar tools. It is mainly dedicated to operational forecasting and it is very similar to Cylc.
+
+More information can be found at https://confluence.ecmwf.int/display/ECFLOW/ecflow+home. 
+
+#### Is it currently widely used by the Climate community?
+No. Even though ecFlow is very similar to cylc, it has not been widely used or envisaged by the climate community.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+There are examples from the [ecFlow tutorial](https://confluence.ecmwf.int/display/ECFLOW/Tutorial).
+
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+There is nothing mentioned about interoperability with existing standards. 
+
+#### Is there a graphical user interface to compose workflows?
+As for cylc, there is a graphical interface to visualize the resulting workflow and to monitor running tasks. However, there is no GUI to compose ecFlow workflows.
+
+#### Does it support running tasks with containers?
+Same as for Cylc. There is no explicit mention of containers in the ecFlow documentation but it should not be a problem to run tasks in containers.
+
+
+### Autosubmit
+
+Autosubmit is a python-based workflow manager to create, manage and monitor experiments by using Computing Clusters, HPC’s and Supercomputers remotely via ssh. It has support for experiments running in more than one HPC and for different workflow configurations. Autosubmit is Open Source (GNU GPL3 license) and is currently developed and maintained by BSC. It is available from gitlab: https://earth.bsc.es/gitlab/es/autosubmit. 
+
+#### Is it currently widely used by the Climate community?
+It is used at Barcelona Supercomputing Centre (BSC) to run models (EC-Earth, MONARCH, NEMO, CALIOPE, HERMES...), operational toolchains (S2S4E), data-download workflows (ECMWF MARS), and many others. It has been tried in the Nordics (at least in Norway) but we have not found extensive usage from the climate community.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+There is a tutorial (https://autosubmit.readthedocs.io/en/master/tutorial.html) but we did not find a registry or shared autosubmit workflows for running EC-Earth or any other ESMs.
+
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+As most workflow management systems developed by the numerical weather prediction and/or climate community, there is no attempt to follow the Common Workflow Language standard. 
+
+#### Is there a graphical user interface to compose workflows?
+There is no graphical user interface to compose workflows but as for Cylc and ecFlow, there is graphical user interface to monitor experiments (see https://autosubmit.readthedocs.io/en/master/autosubmit-gui.html for an example).
+
+#### Does it support running tasks with containers?
+There is no clear mention of containers.
+
+
+### Galaxy
+
+Galaxy (https://galaxyproject.org/)  is an open, web-based and/or command line platform for accessible, reproducible, and transparent computational research. Galaxy can be accessed on a [free public server](https://galaxyproject.org/use/), or installed locally. Galaxy workflow Management System is inherent to Galaxy but it uses a data centred approach, effectively building a workflow implicitly by applying a series of operations on the data items, keeping a “history” of all intermediate data items that are produced (and how they were made), making it easy to rerun parts of the workflow and share the results with others. Adding a new tool to Galaxy (if it is not already in the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/)) is done by making a little Python wrapper and a description.
+
+#### Is it currently widely used by the Climate community?
+Galaxy is not widely used by the climate community. As part of [EOSC-Nordic](https://eosc-nordic.eu/) and other EOSC-related projects (such as [RELIANCE](https://www.reliance-project.eu/)), tools for running and analysing Earth System Models have been integrated (for instance CESM). 
+
+#### There is an interest for using Galaxy for running Earth System Model expressed by the biodiversity community (for instance field ecologists): their background is usually biology and they have often already been “exposed” to Galaxy during their studies and heard about it in international conferences.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+There are very few examples available yet. Workflowhub (https://workflowhub.eu/) contains one or two workflows for running FATES/CLM and CESM (for example https://workflowhub.eu/workflows/65). However, workflowhub can accommodate workflows from any workflow management system and is therefore not limited to Galaxy. 
+ 
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+Galaxy is working on Common Workflow Language support.
+
+#### Is there a graphical user interface to compose workflows?
+Galaxy is the only workflow management system we found with the graphical user interface to compose workflows. There is a very basic GUI for monitoring workflows (while running). 
+
+#### Does it support running tasks with containers?
+Galaxy does support containers (docker, singularity).
+
+
+### Snakemake
+
+Snakemake is another workflow management system to create reproducible and scalable data analyses. 
+
+Snakemake is very likely the most popular workflow management system, principally due to its simplicity and the fact that workflows are described via a human readable, Python based language.
+
+#### Is it currently widely used by the Climate community?
+We have not found usage of snakemake within the Climate community; at least not for running Earth System Models. 
+
+Snakemake is taught as part of [CodeRefinery](https://coderefinery.org/) workshops that are very popular within the Nordic climate community.
+
+#### Are there any workflows available/shared for running and analysing ESMs?
+We did not find any examples related to ESMs.
+
+#### Is it attempting to be interoperable with existing standards such as the Common Workflow Language Standard?
+Yes. From Snakemake 4.8.0, it is possible to refer to CWL tool definitions in rules instead of specifying a wrapper or a plain shell command. 
+
+#### Is there a graphical user interface to compose workflows?
+No. There is no graphical interface to compose snakemake workflows (knowledge of python programming is necessary). There is a GUI to visualize finalized snakemake workflows. 
+
+#### oes it support running tasks with containers? 
+Yes. Snakemake supports running tasks in containers (docker, singularity).
+
+
 ## Results on the analyzed workflow management systems
 
 Detailed information about each considered workflow management system and answers to each of the questions can be found in Annex-B. In this section, we summarize our findings.
