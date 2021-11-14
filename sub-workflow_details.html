@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Description of sub-workflows &#8212; FAIR Earth System Models</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">FAIR Earth System Models</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Welcome to the FAIR Earth System Model Hub
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   FAIR ESM workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="workflows.html">
+     Workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/sub-workflow_details.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM/issues/new?title=Issue%20on%20page%20%2Fsub-workflow_details.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw1-prepare-and-run-an-esm-experiment">
+   SW1- Prepare and run an ESM experiment:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw2-quickly-check-experiment">
+   SW2- Quickly check experiment:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw3-prepare-input-data-for-running-with-an-esm">
+   SW3- Prepare input data for running with an ESM:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw4-compare-two-experiments-from-the-same-esm-and-same-configuration-components-resolution-machine-etc">
+   SW4- Compare two experiments from the same ESM and same configuration (components, resolution, machine, etc.):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw5-publish-an-esm-experiment-e-g-archive-it-in-a-public-repository">
+   SW5 - Publish an ESM experiment e.g. archive it in a public repository:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw6-cmorization-or-similar-e-g-compute-new-variables-change-units-interpolate-on-pressure-levels-etc">
+   SW6 - CMORization or similar e.g. compute new variables, change units, interpolate on pressure levels, etc.:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw7-regridding-time-space">
+   SW7 - Regridding (time &amp; space):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw8-publish-results-from-esm-analysis-e-g-post-processed-model-outputs-such-as-means-anomalies-etc-and-plots-figures-with-data-used-for-plotting">
+   SW8 - Publish results from ESM analysis e.g. post-processed model outputs such as means, anomalies, etc. and plots/figures (with data used for plotting):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw9-select-area-or-location-of-interest-from-existing-esm-model-outputs-with-possibly-time-interpolation-rescaling-mean-etc-for-future-comparisons-with-for-instance-observations">
+   SW9 - Select area or location of interest from existing ESM model outputs with possibly time-interpolation/rescaling (mean, etc.) for future comparisons with for instance observations:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw10-retrieve-observations-select-area-location-for-instance-when-using-satellite-or-global-regional-gridded-observation-and-apply-some-bias-corrections">
+   SW10 - Retrieve observations, select area/location (for instance when using satellite or global/regional gridded observation) and apply some bias-corrections:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw11-compare-model-results-with-observations-e-g-plot-time-series">
+   SW11 - Compare model results with observations e.g. plot time series:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw12-reformat-data-to-prepare-it-for-the-model-to-be-used-wrf-preprocessing-system-is-an-example">
+   SW12 - Reformat data to prepare it for the model to be used. WRF Preprocessing System is an example:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw13-run-a-model-regional-transport-etc-that-uses-esm-outputs-as-inputs">
+   SW13 - Run a model (regional/transport, etc.) that uses ESM outputs as inputs:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw14-make-a-source-code-change-to-an-esm-compile-and-test-it-short-run">
+   SW14 - Make a source code change to an ESM, compile and test it (short run):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw15-publish-esm-code-changes">
+   SW15 - Publish ESM code changes:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw16-publish-results-from-regional-downscaling-simulations">
+   SW16 - Publish results from regional/downscaling simulations:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw17-feedback-results-to-observers-or-field-experimentalists-for-instance-to-define-new-different-measurement-campaigns">
+   SW17 - Feedback results to “observers” (or field experimentalists) for instance to define new/different measurement campaigns.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw18-scientific-validation-of-an-esm-experiment">
+   SW18 - Scientific validation of an ESM experiment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw19-publish-esm-outputs-to-esgf-after-cmorization">
+   SW19 - Publish ESM outputs to ESGF (after CMORization)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw20-collect-needs-from-scientists-for-developing-new-diagnostics">
+   SW20 - Collect needs from scientists for developing new diagnostics.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw21-develop-update-diagnostics-and-test-it-not-from-a-scientific-point-of-view-but-to-make-sure-that-at-least-it-does-not-fail">
+   SW21 - Develop/update diagnostics and test it (not from a scientific point of view but to make sure that at least it does not fail)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw22-scientific-validation-of-an-esm-diagnostic">
+   SW22 - Scientific validation of an ESM diagnostic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sw23-publish-release-new-diagnostics-tool">
+   SW23 - Publish/release new diagnostics (tool)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="description-of-sub-workflows">
+<h1>Description of sub-workflows<a class="headerlink" href="#description-of-sub-workflows" title="Permalink to this headline">¶</a></h1>
+<p>For this deliverable, we do not detail each sub-workflow but provide information on the computing &amp; storage resources and where it is usually run, by who (novice, competent practitioner, etc.) and whether a workflow management system is used, etc.</p>
+<div class="section" id="sw1-prepare-and-run-an-esm-experiment">
+<h2>SW1- Prepare and run an ESM experiment:<a class="headerlink" href="#sw1-prepare-and-run-an-esm-experiment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>: HPC (national)</p></li>
+<li><p><strong>Store data on</strong>: disk directly on the HPC</p></li>
+<li><p><strong>Level of expertise required:</strong> advanced. So often experiments are prepared by skilled staff and handed over to researchers (prone to errors and may have to wait for technical staff to support scientists).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: need a very responsive system for creating the experiment (set-up, compilation, etc.) but not for running the ESM experiment (researchers can wait quite a long time for their experiment to start and to finish).</p></li>
+<li><p><strong>Data transfer</strong>: from HPC to National Research Data storage resources (NIRD project area, Swestore, Allas).</p></li>
+<li><p><strong>Workflow Management System</strong>: Not used in the Nordics. Cylc is sometimes used by some international teams but not well established; the goal is not to be FAIR.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: No. Everyone writes their own and may not follow best practices.</p></li>
+</ul>
+</div>
+<div class="section" id="sw2-quickly-check-experiment">
+<h2>SW2- Quickly check experiment:<a class="headerlink" href="#sw2-quickly-check-experiment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>: Sometimes on HPC (same as for running ESM) to avoid transfer of data. Most of the time on post-processing nodes/cloud computing resources.</p></li>
+<li><p><strong>Store data on</strong>: disk often in temporary folders as the data and/or plots produced are not meant to be kept or published.</p></li>
+<li><p><strong>Level of expertise required</strong>:  intermediate (may require some programming experience; at least to open/plot data).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: yes. Usually interactive work (no queuing system and X Window System expected)</p></li>
+<li><p><strong>Data transfer</strong>: No</p></li>
+<li><p><strong>Workflow Management System</strong>:  No</p></li>
+<li><p><strong>Data Management Plan (template)</strong>:  No. data/plots are not kept.</p></li>
+</ul>
+</div>
+<div class="section" id="sw3-prepare-input-data-for-running-with-an-esm">
+<h2>SW3- Prepare input data for running with an ESM:<a class="headerlink" href="#sw3-prepare-input-data-for-running-with-an-esm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  usually on the same HPC where the ESM is to be run. However, it could be run anywhere if input data, etc. are available. Preferably run on a system with no queuing time; where researchers can make use of interactive tools (such as Jupyter notebooks). Need to visualize and may require several iterations/versions before researchers are “satisfied” so cloud computing is more appropriate than HPC or HPC-cloud.</p></li>
+<li><p><strong>Store data on</strong>:  HPC</p></li>
+<li><p><strong>Level of expertise required</strong>: Intermediate (programming expertise is required and many researchers struggle because of a lack of knowledge).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>:  yes. Usually interactive work (no queuing system and X Window System expected); at least for developing the algorithm/program.</p></li>
+<li><p><strong>Data transfer</strong>:  A copy may be kept on more “permanent” storage such as NIRD project area, Swestore or Allas.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No</p></li>
+<li><p><strong>Data Management Plan (template)</strong>:  No. This step is usually not taken into account when submitting a DMP. No versioning of the data and no persistent identifier. No “link” between a custom experiment and its corresponding input data. Customized input data may be publicly available (even when associated with a scientific paper).</p></li>
+</ul>
+</div>
+<div class="section" id="sw4-compare-two-experiments-from-the-same-esm-and-same-configuration-components-resolution-machine-etc">
+<h2>SW4- Compare two experiments from the same ESM and same configuration (components, resolution, machine, etc.):<a class="headerlink" href="#sw4-compare-two-experiments-from-the-same-esm-and-same-configuration-components-resolution-machine-etc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform such as NIRD toolkit. Could be run on any cloud computing platform (no need for HPC or HPC cloud). May require GPUs for visualization and processing (could significantly speed-up analysis &amp; visualization).</p></li>
+<li><p><strong>Store data on</strong>:  disk on semi-permanent storage such as NIRD project area, Swestore or Allas.</p></li>
+<li><p><strong>Level of expertise required</strong>: Intermediate to advanced. Very often customized programs are used and the quality of the resulting analysis and visualizations greatly vary from one researcher to another. There are no standard procedures and ad-hoc programs are rarely published and shared. No best software practices followed.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>:  for large experiments, users are expected to submit a batch job to process all their data. However, researchers have asked to be able to use a more responsive system/platform; possibly with GPUs to speed-up analysis; but at least with lots of memory. Interactive usage with Jupyter notebooks (and dask for parallelism) is often requested by researchers.</p></li>
+<li><p><strong>Data transfer</strong>:  No. Everything is done on the same post-processing platform where data is usually accessible without copying it.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Very ad-hoc and interactive step.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: No. Data produced as part of the analysis are stored as is, with very few or no metadata (except those kept in netCDF files; metadata may be wrong; not checked). Programs used for creating this data and plots are usually not shared and when published there is no “link” between the data and the software used to generate it. No persistent identifiers are generated during this process.</p></li>
+</ul>
+</div>
+<div class="section" id="sw5-publish-an-esm-experiment-e-g-archive-it-in-a-public-repository">
+<h2>SW5 - Publish an ESM experiment e.g. archive it in a public repository:<a class="headerlink" href="#sw5-publish-an-esm-experiment-e-g-archive-it-in-a-public-repository" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  any platform where data to be published is accessible (cloud computing, post-processing platform, etc.). No need to use HPC or HPC-cloud.</p></li>
+<li><p><strong>Store data on</strong>:  public archive/repository. When available researchers use their national data archive service. Otherwise Pangea, zenodo (if not too big) and any other public repositories.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: researchers are expected to be able to quickly submit an “archive” request but do not mind to wait quite a lot of time before that is completed. They have asked to be able to make this request through a command line API and not having to switch from a GUI for instance to add additional metadata (NIRD archive).</p></li>
+<li><p><strong>Data transfer</strong>:  Yes. From storage to Archive.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Sometimes but not really. What is missing is clear information on metadata required for making the published data FAIR. This metadata should be collected during the experiment (and not created at the end) to make sure published experiments can be found and reused.</p></li>
+</ul>
+</div>
+<div class="section" id="sw6-cmorization-or-similar-e-g-compute-new-variables-change-units-interpolate-on-pressure-levels-etc">
+<h2>SW6 - CMORization or similar e.g. compute new variables, change units, interpolate on pressure levels, etc.:<a class="headerlink" href="#sw6-cmorization-or-similar-e-g-compute-new-variables-change-units-interpolate-on-pressure-levels-etc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform where data is accessible. It could be run anywhere e.g. from any cloud services provided data is accessible.</p></li>
+<li><p><strong>Store data on</strong>:  usually same storage resources as non-CMORized data.</p></li>
+<li><p><strong>Level of expertise required</strong>: advanced. Only a few people really know how to CMORize ESM data.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: intermediate. Habitually uses a batch queuing system. Mostly I/Os. Researchers do not expect to get results very quickly; especially when processing large experiments. However, sometimes, when a deadline approaches, this has to be done in an emergency.</p></li>
+<li><p><strong>Data transfer</strong>:  No.</p></li>
+<li><p>**Workflow Management System:  No. Even though there is often some kind of procedure in place because the person who runs the CMORization is not the person who ran the simulation.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: No. And at the end both raw and CMORized data are kept on disks.</p></li>
+</ul>
+</div>
+<div class="section" id="sw7-regridding-time-space">
+<h2>SW7 - Regridding (time &amp; space):<a class="headerlink" href="#sw7-regridding-time-space" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  Very often on HPC because post-processing resources are too limited (not enough memory and/or CPUs). This SW could be run on any cloud computing resources (no need for HPC or HPC-cloud). It can be very time consuming and cumbersome task.</p></li>
+<li><p><strong>Store data on</strong>:  if run on cloud or any processing platforms, data may need to be transferred if the next step is run on HPC.</p></li>
+<li><p><strong>Level of expertise required</strong>: advanced. Most researchers do not regrid data and know very little about regridding.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: for testing and setting up the system must be very responsive (no waiting time; interactive work). For regridding large amounts of data (production), researchers usually submit jobs or wait for quite a while before getting all their data regridded.</p></li>
+<li><p><strong>Data transfer</strong>:  Most of the time, it is not necessary.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: No.</p></li>
+</ul>
+</div>
+<div class="section" id="sw8-publish-results-from-esm-analysis-e-g-post-processed-model-outputs-such-as-means-anomalies-etc-and-plots-figures-with-data-used-for-plotting">
+<h2>SW8 - Publish results from ESM analysis e.g. post-processed model outputs such as means, anomalies, etc. and plots/figures (with data used for plotting):<a class="headerlink" href="#sw8-publish-results-from-esm-analysis-e-g-post-processed-model-outputs-such-as-means-anomalies-etc-and-plots-figures-with-data-used-for-plotting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform with direct access to data. Could be run on any cloud resources provided the data is accessible.</p></li>
+<li><p><strong>Store data on</strong>:  disk storage such as NIRD project area, SWestore or Allas.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice. Anyone should be capable of publishing data they have produced. In practice, whatever is published is usually lacking metadata information that would make it FAIR.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: Researchers do not want to wait to publish their results; at least to initiate the process of publication. They particularly like zenodo where the publication process is fast and efficient.</p></li>
+<li><p><strong>Data transfer</strong>:  From data storage to archive/public repository.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Very ad-hoc procedure.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Partially. Often forgotten when writing DMPs (or very vague). There is no “standard” procedure so publication can differ from one researcher to another (and even from one experiment to another).</p></li>
+</ul>
+</div>
+<div class="section" id="sw9-select-area-or-location-of-interest-from-existing-esm-model-outputs-with-possibly-time-interpolation-rescaling-mean-etc-for-future-comparisons-with-for-instance-observations">
+<h2>SW9 - Select area or location of interest from existing ESM model outputs with possibly time-interpolation/rescaling (mean, etc.) for future comparisons with for instance observations:<a class="headerlink" href="#sw9-select-area-or-location-of-interest-from-existing-esm-model-outputs-with-possibly-time-interpolation-rescaling-mean-etc-for-future-comparisons-with-for-instance-observations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform. Any cloud computing resource with access to data would be suitable.</p></li>
+<li><p><strong>Store data on</strong>:  disk; usually on private project area. Intermediate data is often not kept.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: usually run as an interactive task (jupyter notebook). Low tolerance to waiting time even with large amounts of data to be processed. It is therefore important to store data to speed-up time series access.</p></li>
+<li><p><strong>Data transfer</strong>:  No. Sometimes data is streamed. Usually stored locally and/or in memory.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. At best a jupyter notebook or a script.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Never part of a DMP. Mostly intermediate data.</p></li>
+</ul>
+</div>
+<div class="section" id="sw10-retrieve-observations-select-area-location-for-instance-when-using-satellite-or-global-regional-gridded-observation-and-apply-some-bias-corrections">
+<h2>SW10 - Retrieve observations, select area/location (for instance when using satellite or global/regional gridded observation) and apply some bias-corrections:<a class="headerlink" href="#sw10-retrieve-observations-select-area-location-for-instance-when-using-satellite-or-global-regional-gridded-observation-and-apply-some-bias-corrections" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform or any cloud resources.</p></li>
+<li><p><strong>Store data on</strong>:  locally and/or in-memory for further processing.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice (need basic programming experience). However a higher level of expertise may be required depending on the observations (some are stored in complex data format).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. No batch queue system expected.</p></li>
+<li><p><strong>Data transfer</strong>:  From data provider (where observations are stored) to local storage.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Scripts are often shared as examples on how to retrieve the corresponding type of observations.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Data providers are usually mentioned in the DMP; however data size is often difficult to estimate and not reported once downloaded.</p></li>
+</ul>
+</div>
+<div class="section" id="sw11-compare-model-results-with-observations-e-g-plot-time-series">
+<h2>SW11 - Compare model results with observations e.g. plot time series:<a class="headerlink" href="#sw11-compare-model-results-with-observations-e-g-plot-time-series" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  post-processing platform or any cloud computing with access to the data.</p></li>
+<li><p><strong>Store data on</strong>:  could be anywhere if accessible (such as minio or s3-compatible storage).</p></li>
+<li><p><strong>Level of expertise required</strong>: intermediate. Programming experience usually required; researchers often struggle to adopt a good strategy (to avoid loading too much data in memory, etc.)</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: usually interactive workflow so do not expect queuing time, except when run routinely as part of large experiments.</p></li>
+<li><p><strong>Data transfer</strong>:  data could be streamed. Usually run on a platform with direct access to storage. Results stay on the same platform.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. sometimes a script or jupyter notebook. Often not shared.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: No. Plots and derived products are usually not mentioned in the DMP.</p></li>
+</ul>
+</div>
+<div class="section" id="sw12-reformat-data-to-prepare-it-for-the-model-to-be-used-wrf-preprocessing-system-is-an-example">
+<h2>SW12 - Reformat data to prepare it for the model to be used. WRF Preprocessing System is an example:<a class="headerlink" href="#sw12-reformat-data-to-prepare-it-for-the-model-to-be-used-wrf-preprocessing-system-is-an-example" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC where the model will run. Could be run on HPC-cloud.</p></li>
+<li><p><strong>Store data on</strong>:  HPC</p></li>
+<li><p><strong>Level of expertise required</strong>: novice to intermediate, depending on the model (for instance WRF is quite simple because it already has a WRF Preprocessing System which is well documented; other models can be seen as more difficult).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: usually run as an interactive task even with a large number of input files to process.</p></li>
+<li><p><strong>Data transfer</strong>:  ESM data that will be prepared to be used as inputs need to be transferred from an archive or at least storage project area (NIRD project area, Swestore or Allas) if data is not accessible from HPC.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Even though steps are very well defined, users need to execute them manually.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Usually mentioned in the DMP. However, the resulting data (used as input to the model) are considered as intermediate data and not always kept.</p></li>
+</ul>
+</div>
+<div class="section" id="sw13-run-a-model-regional-transport-etc-that-uses-esm-outputs-as-inputs">
+<h2>SW13 - Run a model (regional/transport, etc.) that uses ESM outputs as inputs:<a class="headerlink" href="#sw13-run-a-model-regional-transport-etc-that-uses-esm-outputs-as-inputs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC even though HPC-cloud or cloud computing could be used.</p></li>
+<li><p><strong>Store data on</strong>:  locally on the HPC or cloud storage.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice to advanced depending on the model to be run.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: same as for running an ESM e.g. users usually expect to submit a batch job and can wait.</p></li>
+<li><p><strong>Data transfer</strong>:  No except if model inputs are not available on the compute platform yet.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No but some models use very complex scripts and sometimes cylc.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Data generated is usually mentioned in the DMP.</p></li>
+</ul>
+</div>
+<div class="section" id="sw14-make-a-source-code-change-to-an-esm-compile-and-test-it-short-run">
+<h2>SW14 - Make a source code change to an ESM, compile and test it (short run):<a class="headerlink" href="#sw14-make-a-source-code-change-to-an-esm-compile-and-test-it-short-run" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC while it could be run on any cloud computing resources or HPC-cloud. Performance is not necessary but may require a sufficient number of CPUs for testing. This is an area where containers would bring considerable benefits (having the same compilers and software environment should ensure consistent model behavior).</p></li>
+<li><p><strong>Store data on</strong>:  locally. Data is not expected to be kept for long.</p></li>
+<li><p><strong>Level of expertise required</strong>: advanced. Only a few researchers make code changes to an ESM. Do not always follow best software practices (especially at PhDs level so their code changes may be “lost”).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Users do not expect to wait but usually have to when on HPC (queues). Would greatly benefit from using cloud computing (or HPC-cloud).</p></li>
+<li><p><strong>Data transfer</strong>:  sometimes for input data. Outputs are usually analysed locally and then removed.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Very manual process.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Not mentioned. Data is not kept.</p></li>
+</ul>
+</div>
+<div class="section" id="sw15-publish-esm-code-changes">
+<h2>SW15 - Publish ESM code changes:<a class="headerlink" href="#sw15-publish-esm-code-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC if tests on HPC. Could be done anywhere (from the computing resources used for testing).</p></li>
+<li><p><strong>Store data on</strong>:  locally and on a repository such as github or gitlab</p></li>
+<li><p><strong>Level of expertise required</strong>: intermediate (requires knowledge of a version control system and best software practices).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Do not expect to wait.</p></li>
+<li><p><strong>Data transfer</strong>:  local to remote repository (github/gitlab).</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Very manual work.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Software changes are not often mentioned in the DMP.</p></li>
+</ul>
+</div>
+<div class="section" id="sw16-publish-results-from-regional-downscaling-simulations">
+<h2>SW16 - Publish results from regional/downscaling simulations:<a class="headerlink" href="#sw16-publish-results-from-regional-downscaling-simulations" title="Permalink to this headline">¶</a></h2>
+<p>For instance model outputs from WRF or any other regional model, transport model such as FLEXPART, etc. Information on the ESM data used as inputs is not always well reported:</p>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC or any platforms used to run the model simulations.</p></li>
+<li><p><strong>Store data on</strong>:  public repository/archive such as pangea, NIRD archive.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: do not want to wait to initiate transfer/publication.</p></li>
+<li><p><strong>Data transfer</strong>:  from local storage to archive.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Always very manual while this task could be automated with creation of all the necessary metadata.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: usually mentioned in the DMP but data size is not mentioned (not known when writing the DMP and never updated).</p></li>
+</ul>
+</div>
+<div class="section" id="sw17-feedback-results-to-observers-or-field-experimentalists-for-instance-to-define-new-different-measurement-campaigns">
+<h2>SW17 - Feedback results to “observers” (or field experimentalists) for instance to define new/different measurement campaigns.<a class="headerlink" href="#sw17-feedback-results-to-observers-or-field-experimentalists-for-instance-to-define-new-different-measurement-campaigns" title="Permalink to this headline">¶</a></h2>
+<p>Usually as a report with plots and possibly data that can be easily manipulated by non-modeller specialists:</p>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  laptop and/or shared document such as google or hackMD.</p></li>
+<li><p><strong>Store data on</strong>:  not very secure and long-term.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Researchers expect to access this resource immediately.</p></li>
+<li><p><strong>Data transfer</strong>:  sometimes info is sent by email.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Never documented and not taken into account in the DMP. Often information is not published and may be lost.</p></li>
+</ul>
+</div>
+<div class="section" id="sw18-scientific-validation-of-an-esm-experiment">
+<h2>SW18 - Scientific validation of an ESM experiment<a class="headerlink" href="#sw18-scientific-validation-of-an-esm-experiment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC. Could be run on any cloud computing resources with access to ESM experiment results.</p></li>
+<li><p><strong>Store data on</strong>:  locally and then transfer to storage such as NIRD project area, Swestore or Allas.</p></li>
+<li><p><strong>Level of expertise required</strong>: intermediate. Very often used existing packages that create lots of plots and the study is completed with customized analysis/plots.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: many researchers are used to submit batch jobs for this task. It can take quite a while when the experiment to analyse is long.</p></li>
+<li><p><strong>Data transfer</strong>:  Not always. Sometimes data is still available on HPC. Often need to transfer data from storage (NIRD project area, Swestore or Allas) to HPC if data is not directly accessible.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No but scripts/tools are usually available (at least for the standard validation). Customized scripts, programs are not always shared.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Often mentioned because plots are published “online”.</p></li>
+</ul>
+</div>
+<div class="section" id="sw19-publish-esm-outputs-to-esgf-after-cmorization">
+<h2>SW19 - Publish ESM outputs to ESGF (after CMORization)<a class="headerlink" href="#sw19-publish-esm-outputs-to-esgf-after-cmorization" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  usually on post-processing platform or on HPC (depending on where the data is).</p></li>
+<li><p><strong>Store data on</strong>:  ESGF node (usually on a national storage resource in the Nordics)</p></li>
+<li><p><strong>Level of expertise required</strong>: high. Only a few people know how to publish to ESGF. It requires special “permissions” so not everyone can publish to ESGF.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: researchers do not expect this step to be interactive. They can wait for quite a long time before having their data published and it is not a problem.</p></li>
+<li><p><strong>Data transfer</strong>:  from storage to ESGF node if necessary.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No but scripts are usually available (but not necessarily shared).</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Yes. Usually very clear and detailed information as researchers follow a well established protocol.</p></li>
+</ul>
+</div>
+<div class="section" id="sw20-collect-needs-from-scientists-for-developing-new-diagnostics">
+<h2>SW20 - Collect needs from scientists for developing new diagnostics.<a class="headerlink" href="#sw20-collect-needs-from-scientists-for-developing-new-diagnostics" title="Permalink to this headline">¶</a></h2>
+<p>Reports, questionnaire, plots showing mock-up diagnostics, etc.:</p>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  google forms or any university/institutional questionnaire “system”</p></li>
+<li><p><strong>Store data on</strong>:  varies but usually on institution premises.</p></li>
+<li><p><strong>Level of expertise required</strong>: novice.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Do not expect to wait to collect results and analyze results.</p></li>
+<li><p><strong>Data transfer</strong>:  often not.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. If a program is developed to analyse the results, it is usually not shared and often not kept in a repository (github/gitlab).</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Rarely mentioned in the climate science community (not really considered as “data”).</p></li>
+</ul>
+</div>
+<div class="section" id="sw21-develop-update-diagnostics-and-test-it-not-from-a-scientific-point-of-view-but-to-make-sure-that-at-least-it-does-not-fail">
+<h2>SW21 - Develop/update diagnostics and test it (not from a scientific point of view but to make sure that at least it does not fail)<a class="headerlink" href="#sw21-develop-update-diagnostics-and-test-it-not-from-a-scientific-point-of-view-but-to-make-sure-that-at-least-it-does-not-fail" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  laptop, post-processing platform. Could be run on any cloud computing resources (no need for HPC or HPC-cloud).</p></li>
+<li><p><strong>Store data on</strong>:  locally (data is not meant to be kept and code changes are expected to be versioned with a proper version control system such as git).</p></li>
+<li><p><strong>Level of expertise required</strong>: advanced. Only very few scientists develop new diagnostics.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Do not expect to wait; very interactive.</p></li>
+<li><p><strong>Data transfer</strong>:  Should not be necessary except for testing e.g. test data sets are usually required.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>:  This development phase is never mentioned in the DMP.</p></li>
+</ul>
+</div>
+<div class="section" id="sw22-scientific-validation-of-an-esm-diagnostic">
+<h2>SW22 - Scientific validation of an ESM diagnostic<a class="headerlink" href="#sw22-scientific-validation-of-an-esm-diagnostic" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  HPC or post-processing platform (e.g. where data is available).</p></li>
+<li><p><strong>Store data on</strong>:  locally. Data is not necessarily kept once the validation is finished.</p></li>
+<li><p><strong>Level of expertise required</strong>: intermediate. Mostly require scientific expertise. Data/plots may be generated and made available to the scientists who will make the validation.</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: medium. With a large dataset, it can take some time to run (sometimes a batch system is used). Generation of plots/data products could easily be automated.</p></li>
+<li><p><strong>Data transfer</strong>:  usually the code is transferred/copied where data is available.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No. Some scripts may be available.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: partially mentioned (if data is meant to be kept). Storage necessary to run the diagnostics (intermediate files) is not assessed (or even known).</p></li>
+</ul>
+</div>
+<div class="section" id="sw23-publish-release-new-diagnostics-tool">
+<h2>SW23 - Publish/release new diagnostics (tool)<a class="headerlink" href="#sw23-publish-release-new-diagnostics-tool" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Run on</strong>:  laptop or cloud computing resource.</p></li>
+<li><p><strong>Store data on</strong>:  on a repository such as github/gitlab.</p></li>
+<li><p><strong>Level of expertise required</strong>: intermediate (requires knowledge of version control system).</p></li>
+<li><p><strong>Required responsiveness/expected waiting time</strong>: high. Do not expect to wait at least for pushing changes (but may have to wait for their PR to be merged).</p></li>
+<li><p><strong>Data transfer</strong>:  from local storage to remote &amp; public repository.</p></li>
+<li><p><strong>Workflow Management System</strong>:  No but not really necessary.</p></li>
+<li><p><strong>Data Management Plan (template)</strong>: Never mentioned.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Anne Fouilloux<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
