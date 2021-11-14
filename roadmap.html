@@ -195,6 +195,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Roadmap
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conlcusion-and-recommendations">
+   conlcusion and recommendations
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -224,6 +242,26 @@ To introduce CESM in Galaxy Europe we have:</p>
 <li><p>Publish his/her workflow in Workflow Hub (<a class="reference external" href="https://workflowhub.eu/">https://workflowhub.eu/</a>) as a FAIR workflow.</p></li>
 </ul>
 <p>EC-EARTH is not open source which makes it more difficult to be included in Galaxy. However, EC-EARTH containers (registered in private repositories) will be developed and tested within NICEST2. As a consequence, all workflows in Annex-A where an ESM needs to be run will be demonstrated with NorESM and/or CESM. For any other workflows, we will make use of both NorESM and EC-EARTH model outputs (or more generally any model outputs publicly available from either researchers’ simulations or CMIP6).</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="conlcusion-and-recommendations">
+<h1>conlcusion and recommendations<a class="headerlink" href="#conlcusion-and-recommendations" title="Permalink to this headline">¶</a></h1>
+<p>We have made an attempt at identifying the needs of the climate community when it comes to Workflow Management Systems. During the NICEST2 project, we will be using Galaxy but make sure that our developed workflows can interoperate with other WMSs (at least as sub-workflows). During the second part of the NICEST2 project, we will implement the workflows we have identified as key for the climate community (see Annex-A) and will work in collaboration with WP3 to ensure the FAIRness of our tools, data and workflows.</p>
+<p>In addition, and as a way to prepare for Open Science &amp; FAIR research, we strongly recommend the climate community to:</p>
+<ul class="simple">
+<li><p>Organize regular outreach and onboarding events (training/hackathon/videos) to disseminate the findings and recommendations to the Nordic communities;</p></li>
+<li><p>Disseminate information on available training on programming and best software practices (The Carpentries, CodeRefinery, PRACE, etc.);</p></li>
+<li><p>Share their “recipes” on how to efficiently run an ESM on a given platform (optimization options, processor layout, file system hints, etc.) so that other scientists can benefit from it;</p></li>
+<li><p>Create an account on <a class="reference external" href="https://usegalaxy.eu/">https://usegalaxy.eu/</a>, look at the available tutorials and begin to familiarize themselves with the tool shed;</p></li>
+<li><p>Create an account on RoHub (<a class="reference external" href="https://www.rohub.org/">https://www.rohub.org/</a>) to see what Research Objects can bring for their research lifecycle management, to find informations and other relevant pieces of work, and to expand their interactions both within their community and outside;</p></li>
+<li><p>Upload their workflows in WorkflowHub e.g. <a class="reference external" href="https://workflowhub.eu/">https://workflowhub.eu/</a> to increase the FAIRness of their research work and make it more visible in their own community and beyond;</p></li>
+<li><p>Report their code changes back to the main repository or at least to the ESM code developers (even if they do not incorporate these directly into the next release, they would get a better pictures of what required modifications and/or can be improved);</p></li>
+<li><p>Seriously think about a Data Management Plan which has to be considered as a “live” document and needs updating throughout research work advances;</p></li>
+<li><p>Seek advice regarding the most suited platform to do their ESM related work (whether it relates to teaching/training, testing, development, small run, large experiments, etc.) and do not hesitate to try various options since a HPC is not necessarily the most sensible choice;</p></li>
+<li><p>Also investigate alternative storage possibilities, in particular for the long term archiving;</p></li>
+<li><p>Consider exploiting containers to run ESMs as they come at no cost in terms of performance and provide a well-defined software environment which they will be able to retrieve on many different platforms, from laptop to cloud and HPC;</p></li>
+<li><p>Whenever possible decompose their tasks (data pre-processing, simulations, data extraction, data post-processing, plots, etc.) in “chunks” which can then be made into workflows (or sub-workflows) and reused by their future selves or others;</p></li>
+<li><p>Use a Workflow Management System, starting with simple cases (to get a feel about how that works) and progressively increasing complexity, especially for sequences that require a lot of manual interventions and are potential source of errors (data inside a workflow is never mistaken and follows the pre-defined path).</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
