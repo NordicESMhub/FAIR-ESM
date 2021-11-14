@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workflow Management Systems &#8212; FAIR Earth System Models</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">FAIR Earth System Models</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Welcome to the FAIR Earth System Model Hub
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   FAIR ESM workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="workflows.html">
+     Workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/wms.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM/issues/new?title=Issue%20on%20page%20%2Fwms.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-workflow-management-system">
+   Introduction to workflow management system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-added-value-of-using-a-workflow-management-system">
+   Expected added value of using a workflow management system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automation">
+     Automation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fair-tools-and-fair-data">
+     FAIR tools and FAIR data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharing-and-collaboration">
+     Sharing and collaboration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#required-effort-for-migrating-using-workflow-management-systems">
+   Required effort for migrating/using workflow management systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results-on-the-analyzed-workflow-management-systems">
+   Results on the analyzed workflow management systems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-galaxy">
+     Why Galaxy?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="workflow-management-systems">
+<h1>Workflow Management Systems<a class="headerlink" href="#workflow-management-systems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction-to-workflow-management-system">
+<h2>Introduction to workflow management system<a class="headerlink" href="#introduction-to-workflow-management-system" title="Permalink to this headline">¶</a></h2>
+<p>We have selected a subset of Workflow Management Systems, based on current usage within the Earth System Modelling community, the maturity and ease of use for a wide range of users, including scientists that usually do not run Earth System Models but need to analyze and collaborate with Earth System modellers (such as field ecologists, economists, urban planners, etc.). A more comprehensive list of Workflow management Systems is available at <a class="reference external" href="https://github.com/common-workflow-language/common-workflow-language/wiki/Existing-Workflow-systems">https://github.com/common-workflow-language/common-workflow-language/wiki/Existing-Workflow-systems</a>.</p>
+<p>A few Workflow Management Systems have been considered and evaluated within the climate modelling community for instance within the <a class="reference external" href="https://portal.enes.org/community/projects-and-initiatives/projects/is-enes2">IS-ENES2</a>
+project. Most of these tools were initially developed by the Numerical Weather Prediction community (for instance <a class="reference external" href="https://confluence.ecmwf.int/display/ECFLOW/ecflow+home">ecFlow</a>,
+<a class="reference external" href="https://cylc.github.io/">Cylc</a>). To our knowledge <a class="reference external" href="https://www.bsc.es/research-and-development/software-and-apps/software-list/autosubmit">Autosubmit</a> is the only Workflow Management System that was directly developed by the climate community. None of these tools considered interoperability with other existing WMS as a requirement, and cross-disciplinary research has not been taken into account.</p>
+<p>For NICEST2, and based on the current usage and potential use of Workflow Management Systems, we have considered:</p>
+<ul class="simple">
+<li><p>CWL</p></li>
+<li><p>Cylc</p></li>
+<li><p>ecFlow</p></li>
+<li><p>Autosubmit</p></li>
+<li><p>Galaxy</p></li>
+<li><p>Snakemake</p></li>
+</ul>
+<p>All the selected WMSs allow describing workflows and tools that makes them portable and scalable from workstations to clusters, cloud, and high performance computing (HPC) environments. Below, you will find a short description of the Workflow Management Systems we considered and for each of them, we answered to the following questions:</p>
+<ul class="simple">
+<li><p>Is it currently widely used by the Climate community?</p></li>
+<li><p>Are there any workflows available/shared for running and analysing ESMs?</p></li>
+<li><p>Is it attempting to be interoperable with existing standards such as the Common Workflow Language (CWL) standard?</p></li>
+<li><p>Is there a Graphical User Interface (GUI) to compose workflows?</p></li>
+<li><p>Does it support running tasks with containers?</p></li>
+</ul>
+</div>
+<div class="section" id="expected-added-value-of-using-a-workflow-management-system">
+<h2>Expected added value of using a workflow management system<a class="headerlink" href="#expected-added-value-of-using-a-workflow-management-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automation">
+<h3>Automation<a class="headerlink" href="#automation" title="Permalink to this headline">¶</a></h3>
+<p>Less errors and easier to set up experiments (from blue sky research to CMIP experiments) as well as any ensemble experiments.</p>
+</div>
+<div class="section" id="fair-tools-and-fair-data">
+<h3>FAIR tools and FAIR data<a class="headerlink" href="#fair-tools-and-fair-data" title="Permalink to this headline">¶</a></h3>
+<p>FAIR stands for Findable, Accessible, Interoperable and Re-usable (Reproducible).</p>
+<p>When selecting a workflow management system, we also aim at supporting the climate community to apply FAIR principles (FAIR tools and
+data) and ease their move to Open Science.</p>
+<p>To get a better overview of what we mean by FAIR computational workflows, we strongly recommend reading the paper
+“FAIR computational workflows” written by Goble et al., 2019 (DOI: <a class="reference external" href="http://dx.doi.org/10.1162/dint_a_00033">10.1162/dint_a_00033</a>) and
+Workflows Community Summit: Advancing the State-of-the-art of Scientific Workflows Management Systems Research and Development, Ferreira
+da Silva et al., 2021, (DOI: <a class="reference external" href="https://doi.org/10.5281/zenodo.4915801">10.5281/zenodo.4915801</a>).</p>
+</div>
+<div class="section" id="sharing-and-collaboration">
+<h3>Sharing and collaboration<a class="headerlink" href="#sharing-and-collaboration" title="Permalink to this headline">¶</a></h3>
+<p>Most scientists have shown a strong interest in being able to share their data, software and workflows whenever these are considered “ready for publication”. Therefore, being able to control permissions/access is a must and scientists have requested an easy way to transition from private/shared with their collaborators only (before publication) to fully public data, software and workflows. WorkflowHub (<a class="reference external" href="https://workflowhub.eu/">https://workflowhub.eu/</a>) is a registry for describing, sharing and publishing scientific computational workflows. We strongly recommend the climate community to upload their workflows in WorkflowHub to increase the FAIRness of their research work.</p>
+</div>
+</div>
+<div class="section" id="required-effort-for-migrating-using-workflow-management-systems">
+<h2>Required effort for migrating/using workflow management systems<a class="headerlink" href="#required-effort-for-migrating-using-workflow-management-systems" title="Permalink to this headline">¶</a></h2>
+<p>We have explored several existing Workflow Management Systems to identify possible re-use and/or existing expertise within the Nordic countries, in Europe or worldwide; both within the Earth System Modelling community but also outside (in particular with communities that already engage/collaborate with the ESM community). In each case, the objective is also to assess the possible support the Nordic Earth System Modelling Community could get for migrating/using a specific workflow management system.</p>
+<p>In relation to NICEST2 work package 3 “FAIR climate data for NorESM and EC-Earth”, we have taken into account the capabilities and/or existing work/tools of the corresponding workflow management system to facilitate the creation of:</p>
+<ul class="simple">
+<li><p>FAIR computational workflows,</p></li>
+<li><p>FAIR data and</p></li>
+<li><p>FAIR software.</p></li>
+</ul>
+</div>
+<div class="section" id="results-on-the-analyzed-workflow-management-systems">
+<h2>Results on the analyzed workflow management systems<a class="headerlink" href="#results-on-the-analyzed-workflow-management-systems" title="Permalink to this headline">¶</a></h2>
+<p>Detailed information about each considered workflow management system and answers to each of the questions can be found in Annex-B. In this section, we summarize our findings.</p>
+<p>There is not one workflow management system standing out among the others. Workflow Management Systems are relatively new to the climate community, especially to researchers at Universities. Several of the analysed workflow management systems were very similar: Cylc, ecFlow and to some extent Autosubmit. These three workflow management systems are mostly used/developed by the Numerical Weather Prediction Community and only more recently adopted by the Climate Community. While promising, the community is rather small and no consideration for cross-disciplinary research has been made.</p>
+<p>Most workflow management systems are considering the possibility to add metadata for FAIR computational workflows (see FAIR Computational Workflows, Goble
+et al., 2019, DOI: <a class="reference external" href="http://dx.doi.org/10.1162/dint_a_00033">10.1162/dint_a_00033</a>) but we found that Galaxy (because it is more than just a workflow
+management system) has already implemented most of the FAIR workflow principles. In addition, there is already an ongoing collaboration with the Galaxy
+Community (<a class="reference external" href="https://www.eosc-nordic.eu/">EOSC-Nordic</a>, <a class="reference external" href="https://www.ines.noresm.org/">INES</a>). In the next section, we give more details on why we have chosen Galaxy and also why we think this choice will not restrict the Climate Community to a single workflow management system. Indeed, the main objective is first to democratize the use of WMSs within the Climate community and in particular encourage/train researchers to decompose their work into FAIR workflows.</p>
+<div class="section" id="why-galaxy">
+<h3>Why Galaxy?<a class="headerlink" href="#why-galaxy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Galaxy supports a wide range of users from novices (through its web interface) to advanced users (via command line); thanks to its GUI, it would make it possible to teach and expose undergraduate students to Earth System Modelling and more generally introduce the notions of automated workflow and reproducible research.</p></li>
+<li><p>Adding a new tool to Galaxy (if it is not already in the <a class="reference external" href="https://toolshed.g2.bx.psu.edu/">Galaxy Toolshed</a>) is done by making a little Python wrapper and a description in XML where metadata
+can be easily added to improve the FAIRness of the tools.</p></li>
+<li><p>All Galaxy tools already accommodate metadata, including metadata from the <a class="reference external" href="http://edamontology.org/page">EDAM ontology</a> that can significantly improve the FAIRness of our workflows. The EDAM ontology will be extended for the climate/geosciences community as part of the EOSC-Nordic project. End-users can then use the new tool from the command line or the Galaxy web interface.</p></li>
+<li><p>Galaxy is already an EOSC service (listed on the EOSC market place) with free/public access to Galaxy Europe; There is also the possibility to book virtual classroom (dedicated computing &amp; storage resources) for teaching
+(<a class="reference external" href="https://galaxyproject.eu/tiaas.html">Training Infrastructure as a Service</a>);.A scientific collaboration within EOSC-Nordic and EOSC-Life has been put in place for adopting the <a class="reference external" href="https://github.com/eosc-life/tools-collaboratory-roadmap">EOSC-Life tool roadmap</a> and following best software practices from the development until the deployment of tools (including containerization of any tools). As a result, we get support (staff) from Galaxy Europe &amp; ELIXIR Europe for our training events &amp; hackathons.</p></li>
+<li><p>The Galaxy community is large and there is significant effort to onboard new communities (not only bioinformatics for which Galaxy has been initially developed). For instance, Galaxy Europe supports more than 20 communities with their own subdomain (see <a class="reference external" href="https://galaxyproject.eu/about">https://galaxyproject.eu/about</a>).</p></li>
+<li><p>Many tools of interest for the Climate community (such as machine learning tools) have been included. Interactive tools such as Jupyter notebooks are also already available.</p></li>
+<li><p>Among CWL, Cylc, ecFlow, autosubmit, galaxy and snakemake, Galaxy is the only workflow management system allowing end-users to compose workflows from both the command line and via a graphical user interface (see <a class="reference external" href="https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-editor/tutorial.html">Galaxy tutorial on creating, editing and importing galaxy workflows</a>). This GUI makes it easier to clearly see dependencies and provides guidance while the workflow is being composed and later published (with also check lists for improving FAIRness, etc.). Galaxy is also working on supporting CWL standard: galaxy2cwl is a lightweight tool to convert Galaxy workflow files to abstract CWL.</p></li>
+<li><p>Galaxy is “coarse-grained” and also includes the notion of “workflows of workflows” e.g. a workflow can become a new “Galaxy tool”: for the climate community, it means that an ESM workflow (for instance written with Cylc and/or CWL) could be added as a new tool to Galaxy (and therefore be used both from the command line and via a graphical user interface).</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Anne Fouilloux<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
