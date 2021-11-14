@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identification of the needs &#8212; FAIR Earth System Models</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">FAIR Earth System Models</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Welcome to the FAIR Earth System Model Hub
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   FAIR ESM workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="workflows.html">
+     Workflows
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/needs.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NordicESMHub/FAIR-ESM/issues/new?title=Issue%20on%20page%20%2Fneeds.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodology">
+   Methodology
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#current-practices-needs">
+   Current practices &amp; needs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-the-level-of-expertise-of-end-users">
+     On the level of expertise of end-users
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-the-use-existence-of-data-management-plan-templates">
+     On the use/existence of Data Management Plan templates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-the-use-of-computing-storage-resources">
+     On the use of Computing &amp; storage resources
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-the-use-of-workflow-management-systems">
+     On the use of Workflow Management Systems
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="identification-of-the-needs">
+<h1>Identification of the needs<a class="headerlink" href="#identification-of-the-needs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="methodology">
+<h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">¶</a></h2>
+<p>To collect user’s needs, we have asked individual researchers how they used to work with ESMs, and we also collected information from support staff. The methodology used for sampling and collecting inputs is known to be biased towards the NICEST2 partners e.g. very few researchers with no direct links to the NICEST2 consortium provided inputs. Therefore, the different “workflows” and steps we have identified may not fully cover all the current practices but were sufficiently varied in terms of computing &amp; storage resources as well as tooling chain involved to be used as a starting point for the NICEST2 project.</p>
+<p>For each workflow we have identified, we want to find out what is needed in terms of:</p>
+<ul class="simple">
+<li><p>Computing resources</p></li>
+<li><p>Storage resources</p></li>
+<li><p>Acceptable waiting time/expected responsiveness of the system</p></li>
+<li><p>Average level of “technical/modelling” expertise of users</p></li>
+</ul>
+<p>We also describe the current practices e.g. answering to the following questions:</p>
+<ul class="simple">
+<li><p>Is it run on a “traditional” HPC managed at national level?</p></li>
+<li><p>Is the storage accessible from the computing resources without copying back and forth?</p></li>
+<li><p>Is it stored on a national storage resource?</p></li>
+<li><p>Is a workflow management system (automation) used in the Nordics for executing this workflow? If yes, which one?</p></li>
+<li><p>Is a workflow management system used elsewhere for executing this workflow? If yes, which one?</p></li>
+<li><p>Is there a specific data management plan and/or template for this workflow?</p></li>
+</ul>
+</div>
+<div class="section" id="current-practices-needs">
+<h2>Current practices &amp; needs<a class="headerlink" href="#current-practices-needs" title="Permalink to this headline">¶</a></h2>
+<p>In this section we summarized our findings for each identified workflow and sub-workflow.</p>
+<div class="section" id="on-the-level-of-expertise-of-end-users">
+<h3>On the level of expertise of end-users<a class="headerlink" href="#on-the-level-of-expertise-of-end-users" title="Permalink to this headline">¶</a></h3>
+<p>When interviewing researchers and/or discussing their usage of Earth System Models, we found out that very few have a good knowledge of the Earth System Modelling ecosystem (including aspects related parallelization, discretization, optimization, etc.) and how to efficiently run an ESM on a given platform. Most reported following “recipes” provided by either a more senior scientific staff (usually a postdoc) and/or a support staff and/or online documentation.</p>
+<p>Most researchers do not make any code changes but customize their ESM experiments by creating new forcing/inputs, changing parameters in the model, developing custom scenarios, etc. The programs used to make these changes are rarely released or published. If requested by the publisher, a github repository will be created or the code will be dumped in an archive such as zenodo.</p>
+<p>However, some researchers make very simple code changes and what we found most surprising is that they usually do not plan to report their changes back to the main repository (this applies in particular to PhD students) even when the code is fully open (such as CESM and/or NorESM): many said that they do not understand the procedure, and/or have not directly contacted the main developers, and/or think that their changes may not be inline with the planned developments. When publishing their research, they usually find it sufficient to describe their code modifications (if that is required by the publisher).
+More substantial code changes are made in collaboration with the main developers.</p>
+<p>ESMs are used by a wide range of scientists whose main objectives are not necessarily climate modelling. Modellers have an increasing need to work with non-model specialists (for instance field ecologists, economists, social scientists) to improve ESMs and need a framework that can “simplify” the use of Earth System Models. For instance, field ecologists need to be able to set-up new ESM experiments (update forcings/inputs, model parameters, etc.) and compare them with observations.
+Other examples given by researchers are studies on the impact of climate changes on the economy, on health related matters, on urbanism, on vegetation and landscape, on agriculture and more generally land use.
+These researchers cannot invest as much time as (future) modellers to master the use of ESMs. Several of these researchers would welcome Graphical User Interface for submitting and analyzing their ESM experiments. We would need to take these requirements into consideration when selecting a workflow management system.</p>
+</div>
+<div class="section" id="on-the-use-existence-of-data-management-plan-templates">
+<h3>On the use/existence of Data Management Plan templates<a class="headerlink" href="#on-the-use-existence-of-data-management-plan-templates" title="Permalink to this headline">¶</a></h3>
+<p>It is of course not really a surprise but templates for Data Management Plan (DMP) related to Climate Modelling &amp; climate data analysis are not available. Researchers welcome the availability of DMP templates and some have already notified us of the possibility to share their current DMP as a starting point: this information is useful for NICEST2 WP3 (deliverable D3.5). Guidance on where to run and where to store inputs &amp; model outputs or more generally results from their research based on the type of simulations and/or analysis has been requested by a small number of researchers.
+More importantly, researchers think that automatically updating their DMPs while running their ESM experiments &amp; analysis would be very useful and they would be more interested in having detailed and accurate DMPs.</p>
+</div>
+<div class="section" id="on-the-use-of-computing-storage-resources">
+<h3>On the use of Computing &amp; storage resources<a class="headerlink" href="#on-the-use-of-computing-storage-resources" title="Permalink to this headline">¶</a></h3>
+<p>Researchers believe they have no choice when it comes to running ESMs: they prefer to request computing resources on platforms where the corresponding ESM has been scientifically validated. Access to model inputs is also critical (the goal is to avoid having to copy model inputs for each ESM experiment).
+Most researchers run on national HPC resources and store model research outputs on national storage resources. In some Nordic countries, there is no need to transfer data from the storage resource to the HPC since there is a shared file system
+Researchers who develop ESMs often use their laptop to edit, compile and check their code changes but need to quickly move to an HPC for running any experiments (other than a single column model). Many researchers would welcome the use of cloud computing for their model developments but would like to have an “environment” similar to what they have on their laptop or HPC (which is mostly a terminal where they can run ESMs from the command line).</p>
+<p>Most researchers never use containers (docker, singularity, etc.) but would not mind trying it out. However, all the researchers we have contacted believe that the usage of containers will be limited to small use cases (or model development) and were surprised to learn that NorESM can run on HPC-cloud with singularity containers and be as efficient as on Betzy.
+Many researchers have expressed an interest in having training and/or hackathons on containers.</p>
+</div>
+<div class="section" id="on-the-use-of-workflow-management-systems">
+<h3>On the use of Workflow Management Systems<a class="headerlink" href="#on-the-use-of-workflow-management-systems" title="Permalink to this headline">¶</a></h3>
+<p>The main result from our analysis is related to the lack of use of Workflow Management Systems in the Nordics and worldwide. A few large teams/projects in the USA and UK have started to use cylc (<a class="reference external" href="https://cylc.github.io/documentation/">https://cylc.github.io/documentation/</a>) and/or Autosubmit but very little is said about the underlying reasons, and it has not been done in the context of Open Science &amp; FAIR research: it is mostly derived from the use of similar workflow management systems by meteorological services, for instance for running their operational forecasts. A more detailed discussion on the pros and cons of some Workflow Management Systems will be given in the next section.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Anne Fouilloux<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
