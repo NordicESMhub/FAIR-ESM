@@ -1,5 +1,5 @@
-Workflows
-=========
+7 core Workflows
+=================
 
 We have identified 7 different types of workflows:
 - W1 - Workflow “Running an Earth System Model to simulate specific events/scenarios (for example changing CO2, or more generally forcings or other model inputs, generating volcanic eruptions, experiment with geoengineering) or for systematic sensitivity studies: running the same source code with different parameters”
