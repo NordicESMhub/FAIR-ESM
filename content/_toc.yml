@@ -8,11 +8,13 @@ parts:
   chapters:
   - file: needs
   - file: wms
+  
 - caption: FAIR ESM Workflows
   chapters:
   - file: workflows
   - file: workflow_details
   - file: sub-workflow_details
+  
 - caption: Roadmap for FAIR ESMs
   chapters:
-- file: roadmap
+  - file: roadmap
