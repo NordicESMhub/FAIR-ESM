@@ -182,7 +182,7 @@ Yes. From Snakemake 4.8.0, it is possible to refer to CWL tool definitions in ru
 #### Is there a graphical user interface to compose workflows?
 No. There is no graphical interface to compose snakemake workflows (knowledge of python programming is necessary). There is a GUI to visualize finalized snakemake workflows. 
 
-#### oes it support running tasks with containers? 
+#### Does it support running tasks with containers? 
 Yes. Snakemake supports running tasks in containers (docker, singularity).
 
 
